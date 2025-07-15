@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Sidebar from './components/Sidebar'
+import Navbar from './components/Navbar'
+import './globals.css'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,18 +20,17 @@ export const metadata: Metadata = {
   description: "Dashboard",
 };
 
-import Sidebar from './components/Sidebar'
-import Navbar from './components/Navbar'
-import './globals.css'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-[#ececec] flex">
-        <Sidebar />
-        <div className="flex-1">
-          <Navbar />
-          <main className="p-4">{children}</main>
+      <body className="bg-[#ececec]">
+        <div className="flex">
+          <Sidebar />
+          <div className="flex-1 min-h-screen">
+            <Navbar /> 
+            <main className="p-4 mt-[70px] lg:mt-0">{children}</main>
+          </div>
         </div>
       </body>
     </html>
