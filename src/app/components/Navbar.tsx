@@ -34,7 +34,7 @@ const Navbar = () => {
           <input
             type="text"
             placeholder="Search for something"
-            className="w-3xs pl-10 rounded-2xl text-[#8BA3CB] placeholder:text-[#8BA3CB] placeholder:text-sm font-normal bg-gray-200 pr-4 py-2 border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-3xs pl-10 rounded-4xl text-[#8BA3CB] placeholder:text-[#8BA3CB] placeholder:text-sm font-normal bg-gray-200 pr-4 py-2 border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
         </div>
         <Image
