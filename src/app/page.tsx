@@ -1,3 +1,6 @@
+import DashboardPage from '../app/dashboard/Dashboard'
 export default function Dashboard() {
-  return <div>Your dashboard content here</div>;
+  return (
+    <DashboardPage/>
+  )
 }

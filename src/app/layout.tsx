@@ -4,6 +4,7 @@ import "./globals.css";
 import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar'
 import './globals.css'
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,9 +30,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Sidebar />
           <div className="flex-1 min-h-screen">
             <Navbar /> 
-            <main className="p-4 mt-[70px] lg:mt-0">{children}</main>
+            <main className="p-7 mt-[130px] lg:mt-0">{children}</main>
           </div>
         </div>
+        <Toaster position="top-right"/>
       </body>
     </html>
   );
