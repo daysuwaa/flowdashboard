@@ -12,8 +12,7 @@ import SettingIcon from "../assets/Settings.png";
 import AccountsIcon from "../assets/Account.png";
 import CreditCardIcon from "../assets/Credit Card Design.png";
 import TransferIcon from "../assets/Transfer.png";
-import SettingsIcon from "../assets/Settings__Nav.png";
-import NotificationsIcon from "../assets/Notification.png";
+import { Search } from "lucide-react";
 import Profile from "../assets/UserIcon.png";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -80,21 +79,27 @@ const Sidebar = () => {
   return (
     <>
       {/* Mobile Top Bar */}
-      <div className="lg:hidden fixed w-full z-30 bg-white p-4 flex justify-between items-center shadow-sm">
-        <div className="flex items-center gap-3">
-          <button onClick={() => setIsOpen(true)}>
-            <Menu size={24} />
-          </button>
-        </div>
-         <h1 className="text-lg flex mx-auto font-semibold">{pageTitle}</h1>
-        <div className="flex items-center ml-auto">
-          <Image
-            src={Profile}
-            alt="profile"
-            className="rounded-full w-10 h-10"
-          />
-        </div>
-      </div>
+      <div className="lg:hidden fixed w-full z-30 bg-white p-4 shadow-sm">
+        {/* Top Row: Menu + Page Title + Profile */}
+         <div className="flex justify-between items-center mb-3">
+            <button onClick={() => setIsOpen(true)}>
+             <Menu size={24} />
+             </button>
+             <h1 className="text-lg font-semibold">{pageTitle}</h1>
+             <Image src={Profile} alt="profile" className="rounded-full w-10 h-10" />
+         </div>
+
+          {/* Search Bar  */}
+           <div className="relative w-full">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[#8BA3CB]" />
+                <input
+                  type="text"
+                  placeholder="Search for something"
+                  className="w-full pl-10 rounded-4xl text-[#8BA3CB] placeholder:text-[#8BA3CB] placeholder:text-sm font-normal bg-gray-200 pr-4 py-2 border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+           </div>
+         </div>
+               
 
       {/* Sidebar for large screens */}
       <div className="hidden lg:block px-9 max-w-3xs pt-7 h-screen bg-white">
@@ -107,7 +112,7 @@ const Sidebar = () => {
 
       {/* Slide-in Mobile Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full w-[75%] mx-auto justfify-center  bg-white z-40 transform transition-transform duration-300 shadow-md lg:hidden ${
+        className={`fixed top-0 left-0 h-full w-[55%] mx-auto justfify-center  bg-white z-40 transform transition-transform duration-300 shadow-md lg:hidden ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
