@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import UserProfile from "../../assets/EditProfile.png";
 import toast from "react-hot-toast";
 import Button from '@mui/material/Button';
-import InputField from "./inputfield/InputField";
+import InputField from "../../components/InputField";
 import DateOfBirthInput from "./DOBSelect";
 
 const EditProfile = () => {
@@ -19,12 +19,49 @@ const EditProfile = () => {
   const [presentAddress, setPresentAddress] = useState("");
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
-  // toaster
-  const handleClick = () => {
-    toast.success("Saved successfully!");
+
+const handleSubmit = async () => {
+  const data = {
+    name,
+    email,
+    dob,
+    address,
+    postalCode,
+    userName,
+    password,
+    presentAddress,
+    city,
+    country,
   };
 
+  try {
+    const response = await fetch("/api/mock", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
 
+    if (!response.ok) {
+      throw new Error("Failed to submit form");
+    }
+
+    toast.success("Saved successfully!");
+
+    // ✅ Clear all fields
+    setName("");
+    setEmail("");
+    setDob("");
+    setAddress("");
+    setPostalCode("");
+    setUserName("");
+    setPassword("");
+    setPresentAddress("");
+    setCity("");
+    setCountry("");
+  } catch (error) {
+    toast.error("Something went wrong!");
+    console.error(error);
+  }
+};
   return (
     <div className="mx-6 mt-4 lg:flex ">
       <div className="lg:mr-16 flex justify-center mx-auto">
@@ -36,7 +73,7 @@ const EditProfile = () => {
       </div>
 
       
-      <div className=" w-full">
+      <form onSubmit={handleSubmit} className=" w-full">
         <div className="lg:flex gap-3">
           <InputField
             type="text"
@@ -126,12 +163,12 @@ const EditProfile = () => {
                 }
               
               }}
-               variant="contained"
-               onClick={handleClick}>
+              type="submit"
+               variant="contained">
                Save
                </Button>
           </div>
-      </div>
+      </form>
 
     </div>
   );

@@ -51,7 +51,7 @@ const Sidebar = () => {
   const isActive = (href: string) => pathname === href;
 
   const SidebarContent = () => (
-    <nav className="space-y-2 mt-10 w-4xl">
+    <nav className="space-y-2  mt-10 ">
       {sidebarLinks.map((link, index) => (
         <Link key={index} href={link.href} onClick={() => setIsOpen(false)}>
           <div
@@ -102,7 +102,7 @@ const Sidebar = () => {
                
 
       {/* Sidebar for large screens */}
-      <div className="hidden lg:block px-9 max-w-3xs pt-7 h-screen bg-white">
+      <div className="hidden fixed left-0 top-0  w-[250px] z-50 lg:block px-9 max-w-3xs pt-7 h-screen bg-white">
         <div className="flex mx-2.5 mb-12 items-center">
           <Image src={logo} alt="flow-logo" />
           <h1 className="font-bold text-2xl ml-3">Flow</h1>

@@ -17,6 +17,7 @@ const InputField = ({type,placeholder,label,value,onChange,}: InputFieldProps) =
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
+        required
        className="w-full border border-[#DFEAF2] py-2 px-3 placeholder:text-sm rounded-xl"
       />
     </div>

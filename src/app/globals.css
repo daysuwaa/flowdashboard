@@ -21,6 +21,11 @@ body{
     width: 100%;
   }
 }
+
+.containerr {
+  overflow: auto;
+  white-space: nowrap;
+}
 /* Hide scrollbar for Webkit */
 /* ::-webkit-scrollbar {
   display: none;
