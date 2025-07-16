@@ -68,7 +68,7 @@ const handleSubmit = async () => {
         <Image
           src={UserProfile}
           alt="editprofile"
-          className="w-[100px] h-[90px] rounded-full lg:h-[71px]"
+          className="w-[90px] h-[90px] rounded-full lg:h-[71px]"
         />
       </div>
 
@@ -152,14 +152,15 @@ const handleSubmit = async () => {
           </div>
           <div className="w-full flex justify-end">
               <Button
-               sx={{backgroundColor:'#232323', textTransform: 'none', 
+               sx={{backgroundColor:'#232323', textTransform: 'none', borderRadius:'15px', 
                 width: {
                 xs: '100%', 
-                md: 'auto', 
+                md:'auto',
+                lg: '190px', 
                 },
 
                 padding:{
-                  xs:'8px 40px'
+                  xs:'10px 50px'
                 }
               
               }}

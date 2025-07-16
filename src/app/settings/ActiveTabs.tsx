@@ -20,7 +20,7 @@ const ActiveTabs: React.FC<ActiveTabsProps> = ({ tabs, activeTab, setActiveTab }
         <button
           key={tab.value}
           onClick={() => setActiveTab(tab.value)}
-          className={`lg:mr-[5.5rem] cursor-pointer mr-7 pb-3 text-sm font-medium transition-all duration-200 ${
+          className={`lg:mr-[5.5rem] cursor-pointer mr-5 pb-3 text-sm font-medium transition-all duration-200 ${
             activeTab === tab.value
               ? "text-[#2c2c2c] border-b-2 border-[#2c2c2c]"
               : "text-gray-500 hover:text-[#718EBF]"
