@@ -1,11 +1,11 @@
 import React from 'react'
-import Images_titles from './Images_titles'
+import Images_titles from './Personnels'
 import BalancePage from '../Balance/Balance'
 
 const Qt = () => {
   return (
     <div className='mt-6'>
-    <div className="grid xl:grid-cols-2 gap-3 h-full">
+    <div className="grid xl:grid-cols-3 gap-10 h-full">
   <Images_titles />
   <BalancePage />
 </div>

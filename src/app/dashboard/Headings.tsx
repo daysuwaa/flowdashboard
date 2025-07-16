@@ -7,7 +7,7 @@ type HaedingsProps = {
 }
 const Headings = ({headingText, headingTextPosition, headingTextSize}: HaedingsProps) => {
   return (
-    <h1 className={`${headingTextPosition} ${headingTextSize} font-semibold mb-5`}>{headingText}</h1>
+    <h1 className={`${headingTextPosition} ${headingTextSize} font-semibold text-[#343C6A] mb-5`}>{headingText}</h1>
   )
 }
 

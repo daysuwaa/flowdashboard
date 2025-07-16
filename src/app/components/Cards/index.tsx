@@ -10,7 +10,7 @@ const CardComponent = () => {
   const cardConfigs = {
     darkCard: {
       headingText: 'My Cards',
-      headingTextSize: 'text-2xl',
+      headingTextSize: 'text-[22px]',
       headingTextPosition: 'text-start',
       background: 'linear-gradient(107.38deg, #5B5A6F 2.61%, #000000 101.2%)',
       mastercardImage: mastercard,
@@ -22,7 +22,7 @@ const CardComponent = () => {
     },
     lightCard: {
       headingText: 'See all',
-      headingTextSize: 'text-lg',
+      headingTextSize: 'text-[17px]',
       headingTextPosition: 'text-end',
       background: 'white',
       mastercardImage: mastercard,
@@ -44,14 +44,14 @@ const CardComponent = () => {
       </div>
 
       {/* Mobile Layout */}
-      <div className="lg:hidden">
-        <div className=" space-x-4  pb-4">
-          {/* <div className="min-w-[320px] flex-shrink-0"> */}
+      <div className="lg:hidden  m-0 p-0">
+        <div className="space-x-4 overflow-auto flex  pb-4">
+          <div className="w-[80%]  flex-shrink-0">
             <CreditCardComponent {...cardConfigs.darkCard} />
-          {/* </div> */}
-          {/* <div className="min-w-[320px] flex-shrink-0"> */}
+          </div>
+          <div className="w-[80%] flex-shrink-0">
             <CreditCardComponent {...cardConfigs.lightCard} />
-          {/* </div> */}
+          </div>
         </div>
 
         <div className="mt-6">

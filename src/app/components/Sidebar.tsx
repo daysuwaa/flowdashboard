@@ -102,7 +102,7 @@ const Sidebar = () => {
                
 
       {/* Sidebar for large screens */}
-      <div className="hidden fied left-0 top-0  max-w-sm z-50 lg:block px-9  pt-7 h-screen border border-[#e6eff5] bg-white">
+      <div className="hidden fixed left-0 top-0  max-w-sm z-50 lg:block px-9  pt-7 h-screen border border-[#e6eff5] bg-white">
         <div className="flex mx-2.5 mb-12 items-center">
           <Image src={logo} alt="flow-logo" />
           <h1 className="font-bold text-2xl ml-3 text-[#343C6A]">Flow</h1>
@@ -119,10 +119,10 @@ const Sidebar = () => {
         <div className="p-4 flex justify-between items-center border-b">
           <div className="flex items-center gap-2">
             <Image src={logo} alt="flow-logo" width={30} height={30} />
-            <h1 className="font-bold text-xl">Flow</h1>
+            <h1 className="font-bold text-xl text-[#343C6A]">Flow</h1>
           </div>
           <button onClick={() => setIsOpen(false)}>
-            <X size={24} />
+            <X size={24} className="text-[#343C6A]" />
           </button>
         </div>
         <SidebarContent />

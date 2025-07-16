@@ -21,8 +21,8 @@ type CardComponentProps = {
 
 const CreditCardComponent = ({background, mastercardImage, chipcardImage, text1color, text2color, cardNumberBg, cardnumbercolor, headingText, headingTextPosition, headingTextSize}: CardComponentProps) => {
     return(
-        <div className='w-full'>
-            <h1 className={`${headingTextPosition} ${headingTextSize} font-bold mb-5 max-h-7`}>{headingText}</h1>
+        <div className='w-full '>
+            <h1 className={`${headingTextPosition} ${headingTextSize} text-[#343C6A] mb-5 max-h-7 font-semibold`}>{headingText}</h1>
             <Card sx={{ 
                 borderRadius: '25px', 
                 backgroundImage: `${background}`, 
@@ -46,7 +46,7 @@ const CreditCardComponent = ({background, mastercardImage, chipcardImage, text1c
                                 Eddy Cusuma
                             </Typography>
                         </div>
-                        <div className="flex flex-col ml-20">
+                        <div className="flex flex-col ml-auto">
                             <p className={`text-[10px] ${text1color}`}>VALID THRU</p>
                             <Typography variant="h6" component="div" sx={{fontSize:'12px', color: `${text2color}` }}>
                                 12/22

@@ -1,12 +1,11 @@
 import React from 'react'
-// import Headings from './Headings'
 import Card from '../components/Cards'
 import Qt from './QuickTransfer'
-import MiddleCharts from '../components/Charts/MiddleCharts'
+import MiddleCharts from '../components/Charts/MiddleChart'
 
 const page = () => {
   return (
-    <div>
+    <div className=''>
       <Card/>
       <MiddleCharts/>
       <Qt/>
