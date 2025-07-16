@@ -27,7 +27,7 @@ const Navbar = () => {
 
   return (
     <div className="hidden lg:flex justify-between items-center bg-white px-6 py-3">
-      <h1 className="text-xl font-semibold text-center">{pageTitle}</h1>
+      <h1 className="lg:text-[28px] font-semibold text-center text-[#343C6A] ">{pageTitle}</h1>
       <div className="flex items-center">
         <div className="relative mr-5">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[#8BA3CB]" />

@@ -37,7 +37,7 @@ const Sidebar = () => {
   const pageTitle = routeToTitleMap[pathname] || "Dashboard";
 
   const sidebarLinks = [
-    { label: "Dashboard", href: "/", icon: DashboardIcon },
+     { label: "Dashboard", href: "/", icon: DashboardIcon },
     { label: "Transactions", href: "/transactions", icon: TransferIcon },
     { label: "Accounts", href: "/accounts", icon: AccountsIcon },
     { label: "Investment", href: "/investment", icon: InvestmentIcon },
@@ -59,17 +59,17 @@ const Sidebar = () => {
               group flex items-center px-4 py-5 rounded-lg transition-all duration-200 cursor-pointer
               ${isActive(link.href)
                 ? "text-slate-800"
-                : "text-slate-700 hover:text-slate-800"}
+                : "text-[#b1b1b1] hover:text-slate-800"}
             `}
           >
             <div
-              className={`mr-3 transition-transform duration-200 ${
+              className={`mr-5 transition-transform duration-200${
                 isActive(link.href) ? "scale-110" : "group-hover:scale-110"
               }`}
             >
-              <Image src={link.icon} alt={link.label} width={25} height={25} />
+              <Image src={link.icon} alt={link.label} width={25} height={25}  />
             </div>
-            <span className="font-medium text-sm">{link.label}</span>
+            <span className="font-medium text-[18px]">{link.label}</span>
           </div>
         </Link>
       ))}
@@ -102,7 +102,7 @@ const Sidebar = () => {
                
 
       {/* Sidebar for large screens */}
-      <div className="hidden fixed left-0 top-0  w-[250px] z-50 lg:block px-9 max-w-3xs pt-7 h-screen bg-white">
+      <div className="hidden fied left-0 top-0  max-w-sm z-50 lg:block px-9  pt-7 h-screen border border-[#e6eff5] bg-white">
         <div className="flex mx-2.5 mb-12 items-center">
           <Image src={logo} alt="flow-logo" />
           <h1 className="font-bold text-2xl ml-3">Flow</h1>

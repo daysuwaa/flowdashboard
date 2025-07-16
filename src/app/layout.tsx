@@ -33,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         
           <div className="flex-1 min-h-screen">
             <Navbar /> 
-            <main className="p-7 mt-[130px] lg:ml-[250px] lg:mt-0">{children}</main>
+            <main className="p-7 mt-[130px]  lg:mt-0">{children}</main>
           </div>
         </div>
         <Toaster position="top-right"/>
