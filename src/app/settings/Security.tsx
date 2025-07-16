@@ -38,14 +38,15 @@ const Security = () => {
       toast.error("Something went wrong!");
       console.error(error);
     } finally {
-      setLoading(false); // ✅ Stop loading
+      setLoading(false);
     }
   };
 
 
   return (
     <div className="mx-6 mt-4 lg:fle">
-      <form onSubmit={handleSubmit} className="max-w-2xl border rounded-lg border-gray-200 p-6 shadow-md">
+      <form onSubmit={handleSubmit} className="max-w-2xl mx-auto border rounded-lg border-gray-200 p-6 shadow-md">
+        <h1 className="text-xl text-[#718EBF] font-semibold mb-6">Change your Password</h1>
         <InputField
           type="password"
           placeholder="********"
