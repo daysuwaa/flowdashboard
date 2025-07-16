@@ -37,14 +37,14 @@ const CardComponent = () => {
   return (
     <div>
       {/* Desktop Layout */}
-      <div className="hidden lg:grid lg:grid-cols-3 gap-9">
+      <div className="hidden xl:grid lg:grid-cols-3 gap-9">
         <CreditCardComponent {...cardConfigs.darkCard} />
         <CreditCardComponent {...cardConfigs.lightCard} />
         <RecentTransactionCard />
       </div>
 
       {/* Mobile Layout */}
-      <div className="lg:hidden  m-0 p-0">
+      <div className="xl:hidden  m-0 p-0">
         <div className="space-x-4 overflow-auto flex  pb-4">
           <div className="w-[80%]  flex-shrink-0">
             <CreditCardComponent {...cardConfigs.darkCard} />

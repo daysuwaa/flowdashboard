@@ -43,7 +43,7 @@ const Images_titles = () => {
             headingTextPosition='text-start'
              headingTextSize='text-[22px]'
             />
-    <div className="bg-white rounded-2xl py-9 relative xl:max-w-[500px]">
+    <div className="bg-white rounded-2xl py-9 relative ">
       <div className=' flex gap-5 lg:gap-3 overflow-x-auto scroll-smooth' ref={scrollRef}>
         <ImagesTitlesComponent
           imagesrc={person1}

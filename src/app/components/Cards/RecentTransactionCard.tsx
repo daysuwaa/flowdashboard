@@ -22,7 +22,7 @@ const RecentTransactionCardComponent = ({iconbg, images, heading, dummydates,amo
  
    
     <CardContent className="flex items-center justify-between">
-      <div className="flex items-center gap-4">
+      <div className="flex items-center lg:gap-4">
         <Image src={images} alt="icon" className={`${iconbg} w-10 h-10 rounded-full p-2`} />
         <div>
           <p className="text-sm text-[#232323] font-light">{heading}</p>
