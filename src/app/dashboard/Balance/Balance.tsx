@@ -4,11 +4,11 @@ import BalanceGraph from '../../components/Charts/BalanceGraph'
 
 const BalancePage = () => {
   return (
-    <div>
+    <div className='lg:col-span-2'>
          <Headings 
         headingText='Balance History'
         headingTextPosition='text-start'
-        headingTextSize='text-2xl'
+        headingTextSize='text-[22px]'
         />
         <BalanceGraph/>
     </div>

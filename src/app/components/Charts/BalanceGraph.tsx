@@ -27,7 +27,7 @@ const cardinal = curveCardinal.tension(0.2);
 const BalanceGraph = () => {
   return (
        
-    <div className="bg-white p-2 h-[210px]  rounded-2xl shadow-sm">
+    <div className=" bg-white p-2 h-[250px]  rounded-2xl shadow-sm">
       <div className="w-full h-full">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
