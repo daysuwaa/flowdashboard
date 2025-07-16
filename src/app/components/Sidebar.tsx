@@ -105,7 +105,7 @@ const Sidebar = () => {
       <div className="hidden fied left-0 top-0  max-w-sm z-50 lg:block px-9  pt-7 h-screen border border-[#e6eff5] bg-white">
         <div className="flex mx-2.5 mb-12 items-center">
           <Image src={logo} alt="flow-logo" />
-          <h1 className="font-bold text-2xl ml-3">Flow</h1>
+          <h1 className="font-bold text-2xl ml-3 text-[#343C6A]">Flow</h1>
         </div>
         <SidebarContent />
       </div>
