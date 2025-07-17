@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { useTheme } from "../context/ThemeContext";
-import Switch from "@mui/material/Switch";
 import { Sun, Moon } from "lucide-react";
 
 const Preferences = () => {
@@ -14,7 +13,7 @@ const Preferences = () => {
         Preferences
       </h1>
       
-      <div className="bg-white  rounded-lg  lg:p-6">
+      <div className="bg-white rounded-lg lg:p-6">
         <div className="space-y-4">
           {/* Theme Section */}
           <div className="lg:flex items-center justify-between">
@@ -27,31 +26,65 @@ const Preferences = () => {
                 )}
               </div>
               <div>
-                <h3 className="font-semibold text-gray-800 ">
+                <h3 className="font-semibold text-gray-800">
                   Theme
                 </h3>
-                <p className="text-sm text-gray-600 ">
+                <p className="text-sm text-gray-600">
                   Currently using {isDarkMode ? "dark" : "light"} mode
                 </p>
               </div>
             </div>
             
             <div className="flex items-center gap-2">
-              <Sun className="w-4 h-4 text-yellow-600" />
-              <Switch 
-                checked={isDarkMode}
-                onChange={toggleTheme}
-                color="primary"
-                sx={{
-                  '& .MuiSwitch-switchBase.Mui-checked': {
-                    color: '#3b82f6',
-                  },
-                  '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
-                    backgroundColor: '#3b82f6',
-                  },
-                }}
+              <Sun 
+                className={`w-4 h-4 transition-all duration-500 ease-in-out ${
+                  isDarkMode ? 'text-gray-400 scale-90' : 'text-yellow-600 scale-100'
+                }`} 
               />
-              <Moon className="w-4 h-4 text-blue-600" />
+              
+              <div className="relative">
+                <input
+                  type="checkbox"
+                  checked={isDarkMode}
+                  onChange={toggleTheme}
+                  className="sr-only"
+                />
+                <div 
+                  onClick={toggleTheme}
+                  className={`
+                    relative w-12 h-6 rounded-full cursor-pointer transition-all duration-500 ease-in-out
+                    ${isDarkMode 
+                      ? 'bg-gradient-to-r from-blue-500 to-blue-600 shadow-lg shadow-blue-500/30' 
+                      : 'bg-gradient-to-r from-gray-200 to-gray-300 shadow-inner'
+                    }
+                  `}
+                >
+                  <div 
+                    className={`
+                      absolute top-0.5 w-5 h-5 rounded-full transition-all duration-500 ease-in-out
+                      transform shadow-lg
+                      ${isDarkMode 
+                        ? 'translate-x-6 bg-white shadow-blue-500/20' 
+                        : 'translate-x-0.5 bg-gradient-to-br from-yellow-400 to-yellow-500 shadow-yellow-500/30'
+                      }
+                    `}
+                  >
+                    <div className={`
+                      w-full h-full rounded-full transition-all duration-500 ease-in-out
+                      ${isDarkMode 
+                        ? 'bg-gradient-to-br from-slate-100 to-slate-200' 
+                        : 'bg-gradient-to-br from-yellow-300 to-yellow-400'
+                      }
+                    `} />
+                  </div>
+                </div>
+              </div>
+              
+              <Moon 
+                className={`w-4 h-4 transition-all duration-500 ease-in-out ${
+                  isDarkMode ? 'text-blue-600 scale-100' : 'text-gray-400 scale-90'
+                }`} 
+              />
             </div>
           </div>
           
