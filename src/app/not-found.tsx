@@ -10,7 +10,7 @@ export default function NotFound(){
 
   // Track mouse movement for interactive background
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
