@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from '../components/Cards'
-import Qt from './QuickTransfer/index'
+import QuickTransfer from './QuickTransfer/index'
 import MiddleCharts from '../components/Charts/MiddleChart'
 
 const page = () => {
@@ -8,7 +8,7 @@ const page = () => {
     <div className=''>
       <Card/>
       <MiddleCharts/>
-      <Qt/>
+      <QuickTransfer/>
 
     </div>
   )
