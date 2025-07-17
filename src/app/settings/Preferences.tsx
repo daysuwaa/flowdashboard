@@ -17,8 +17,8 @@ const Preferences = () => {
         <div className="space-y-4">
           {/* Theme Section */}
           <div className="lg:flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-gray-100 dark:bg-gray-100">
+            <div className="lg:flex items-center gap-3">
+              <div className="p-2 w-fit lg:w-auto rounded-lg bg-gray-100 dark:bg-gray-100">
                 {isDarkMode ? (
                   <Moon className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                 ) : (
@@ -26,7 +26,7 @@ const Preferences = () => {
                 )}
               </div>
               <div>
-                <h3 className="font-semibold text-gray-800">
+                <h3 className="font-semibold mt-2 lg:mt-0 text-gray-800">
                   Theme
                 </h3>
                 <p className="text-sm text-gray-600">
@@ -35,7 +35,7 @@ const Preferences = () => {
               </div>
             </div>
             
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 mt-5 lg:mt-0 mx-auto">
               <Sun 
                 className={`w-4 h-4 transition-all duration-500 ease-in-out ${
                   isDarkMode ? 'text-gray-400 scale-90' : 'text-yellow-600 scale-100'
