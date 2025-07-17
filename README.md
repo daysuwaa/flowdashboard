@@ -1,6 +1,6 @@
 # 📊 Flow Dashboard
 
-A modern, responsive web application built with **Next.js 14** and **TypeScript**.
+A clean modern, responsive web dashboard built with **Next.js 14** and **TypeScript**. Includes theme switching, a responsive layout, and interactive UI components.
 
 ---
 
@@ -8,8 +8,8 @@ A modern, responsive web application built with **Next.js 14** and **TypeScript*
 
 - Light/Dark Theme Toggle
 - Responsive Design
-- Charts & Transaction History
-- Settings Page (Theme + Security)
+- Analytical Charts & Transaction History
+- Settings Page (Profile, Theme & Security)
 
 ## 🚀 Live Demo
 
@@ -25,7 +25,7 @@ A modern, responsive web application built with **Next.js 14** and **TypeScript*
 - **Icons:** Lucide React
 - **UI Library:** Material UI
 - **State Management:** React Hooks + Context API
-- **Notifications:** React Hot Toast
+- **Toasts:** React Hot Toast
 
 ---
 
@@ -56,5 +56,7 @@ npm run dev
 npm run build
 npm start
 ```
+
+## 👩‍💻 Author
 
 Designed and developed by Aiwerioghene Adesuwa
