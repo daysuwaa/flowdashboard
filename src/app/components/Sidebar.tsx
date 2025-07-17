@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import logo from "../assets/logo.svg";
 import DashboardIcon from "../assets/dashboard.png";
 import InvestmentIcon from "../assets/Investment.png";
@@ -17,10 +17,20 @@ import Profile from "../assets/UserIcon.png";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import ProfilePopover from "./ProfilePopover";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const [showProfilePopover, setShowProfilePopover] = useState(false);
+  const profileButtonRef = useRef<HTMLImageElement>(null);
+  const handleProfileClick = () => {
+    setShowProfilePopover(true);
+  };
+
+  const handleCloseProfilePopover = () => {
+    setShowProfilePopover(false);
+  };
 
   const routeToTitleMap: { [key: string]: string } = {
     "/": "Overview",
@@ -86,7 +96,7 @@ const Sidebar = () => {
              <Menu size={24} />
              </button>
              <h1 className="text-lg font-semibold">{pageTitle}</h1>
-             <Image src={Profile} alt="profile" className="rounded-full w-10 h-10" />
+             <Image src={Profile}  onClick={handleProfileClick} alt="profile" className="rounded-full w-10 h-10 cursor-pointer" />
          </div>
 
           {/* Search Bar  */}
@@ -135,6 +145,11 @@ const Sidebar = () => {
           onClick={() => setIsOpen(false)}
         />
       )}
+      <ProfilePopover 
+        isOpen={showProfilePopover}
+        onClose={handleCloseProfilePopover}
+        anchorEl={profileButtonRef.current}
+      />
     </>
   );
 };

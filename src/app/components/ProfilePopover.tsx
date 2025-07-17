@@ -22,15 +22,7 @@ const ProfilePopover: React.FC<ProfilePopoverProps> = ({ isOpen, onClose, anchor
 
   const handleLogout = () => {
   // Simulate logout process
-  console.log('Logging out...');
-
-  // Clear mock user data (if any)
-  localStorage.removeItem('user');
-
-  // Redirect to login or homepage (optional)
-  // router.push('/login'); // if using next/router
-
-  // Close modal or dropdown
+  console.log('Logging out...')
   onClose();
 };
 
@@ -45,21 +37,11 @@ const ProfilePopover: React.FC<ProfilePopoverProps> = ({ isOpen, onClose, anchor
       label: 'Settings',
       action: () => handleMenuItemClick('/settings')
     },
-    // {
-    //   icon: <CreditCard className="w-4 h-4" />,
-    //   label: 'Credit Cards',
-    //   action: () => handleMenuItemClick('/credit-cards')
-    // },
     {
       icon: <Bell className="w-4 h-4" />,
       label: 'Preferences',
       action: () => handleMenuItemClick('/settings')
     },
-    // {
-    //   icon: <HelpCircle className="w-4 h-4" />,
-    //   label: 'Help & Support',
-    //   action: () => handleMenuItemClick('/help')
-    // }
   ];
 
   return (
@@ -68,7 +50,7 @@ const ProfilePopover: React.FC<ProfilePopoverProps> = ({ isOpen, onClose, anchor
       anchorEl={anchorEl}
       onClose={onClose}
       anchorOrigin={{
-        vertical: 'bottom',
+        vertical: 'top',
         horizontal: 'right',
       }}
       transformOrigin={{
@@ -80,7 +62,7 @@ const ProfilePopover: React.FC<ProfilePopoverProps> = ({ isOpen, onClose, anchor
         sx: {
           overflow: 'visible',
           filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-          mt: 1.5,
+          mt: 8,
           borderRadius: 2,
           minWidth: 240,
           '&::before': {
