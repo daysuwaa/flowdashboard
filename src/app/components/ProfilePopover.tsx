@@ -30,7 +30,7 @@ const ProfilePopover: React.FC<ProfilePopoverProps> = ({ isOpen, onClose, anchor
     {
       icon: <User className="w-4 h-4" />,
       label: 'Profile',
-      action: () => handleMenuItemClick('/settings')
+      action: () => handleMenuItemClick('/settings?tab=profile')
     },
     {
       icon: <Settings className="w-4 h-4" />,
