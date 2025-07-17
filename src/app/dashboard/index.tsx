@@ -9,6 +9,7 @@ const page = () => {
       <Card/>
       <MiddleCharts/>
       <QuickTransfer/>
+    
 
     </div>
   )

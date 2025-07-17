@@ -79,6 +79,10 @@ const Security = () => {
               backgroundColor: "#232323",
               textTransform: "none",
               width: { xs: "100%", md: "auto" },
+              '&:hover': {
+                backgroundColor: '#464646', 
+                color: '#fff', 
+              },
               padding: { xs: "8px 40px" },
               "&:disabled": { backgroundColor: "#999" },
             }}

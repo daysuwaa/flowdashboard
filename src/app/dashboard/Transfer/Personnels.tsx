@@ -80,6 +80,7 @@ const Personnels = () => {
 
       {/* Right scroll button */}
       <button 
+       aria-label="scroll to the right"
         onClick={scrollRight}
         className="absolute top-1/2 -translate-y-1/2 right-2 bg-white hover:bg-[#d7d7d7] text-[#718EBF] p-2 rounded-full shadow-md"
       >

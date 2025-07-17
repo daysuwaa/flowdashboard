@@ -75,7 +75,7 @@ if (!isOpen) return null;
       <div className="w-full max-w-md bg-white h-screen shadow-xl overflow-y-auto">
         <div className="flex justify-between items-center p-4 border-b">
           <h2 className="text-lg font-semibold">Notifications</h2>
-          <button onClick={onClose}>
+          <button onClick={onClose} aria-label="close modal">
             <X className="w-5 h-5 text-gray-500" />
           </button>
         </div>

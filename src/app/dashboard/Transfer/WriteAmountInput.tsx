@@ -20,6 +20,7 @@ const WriteAmountInput = () => {
         />
 
         <button
+        aria-label="submit button"
           className="absolute right-1 top-1/2 -translate-y-1/2 bg-black text-white text-sm px-5 py-2.5 rounded-full flex items-center gap-2 shadow-md hover:bg-gray-800 transition"
         >
           Send

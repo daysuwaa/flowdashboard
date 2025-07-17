@@ -101,6 +101,7 @@ const ProfilePopover: React.FC<ProfilePopoverProps> = ({ isOpen, onClose, anchor
         <div className="py-2">
           {menuItems.map((item, index) => (
             <button
+              
               key={index}
               onClick={item.action}
               className="w-full flex items-center gap-3 px-3 py-2 text-left hover:bg-gray-50 rounded-lg transition-colors duration-200 text-gray-700 hover:text-gray-900"

@@ -34,7 +34,7 @@ const Sidebar = () => {
 
   const routeToTitleMap: { [key: string]: string } = {
     "/": "Overview",
-    "/transactions": "Transactions",
+    "/not-found": "Transactions",
     "/accounts": "Accounts",
     "/investment": "Investment",
     "/credit-cards": "Credit Cards",
@@ -48,7 +48,7 @@ const Sidebar = () => {
 
   const sidebarLinks = [
      { label: "Dashboard", href: "/", icon: DashboardIcon },
-    { label: "Transactions", href: "/transactions", icon: TransferIcon },
+    { label: "Transactions", href: "/not-found", icon: TransferIcon },
     { label: "Accounts", href: "/accounts", icon: AccountsIcon },
     { label: "Investment", href: "/investment", icon: InvestmentIcon },
     { label: "CreditCards", href: "/credit-cards", icon: CreditCardIcon },
@@ -92,7 +92,7 @@ const Sidebar = () => {
       <div className="lg:hidden fixed w-full z-30 bg-white p-4 shadow-sm">
         {/* Top Row: Menu + Page Title + Profile */}
          <div className="flex justify-between items-center mb-3">
-            <button onClick={() => setIsOpen(true)}>
+            <button onClick={() => setIsOpen(true)} aria-label="Open navbar">
              <Menu size={24} />
              </button>
              <h1 className="text-lg font-semibold">{pageTitle}</h1>
@@ -131,7 +131,7 @@ const Sidebar = () => {
             <Image src={logo} alt="flow-logo" width={30} height={30} />
             <h1 className="font-bold text-xl text-[#343C6A]">Flow</h1>
           </div>
-          <button onClick={() => setIsOpen(false)}>
+          <button onClick={() => setIsOpen(false)} aria-label="Close nav">
             <X size={24} className="text-[#343C6A]" />
           </button>
         </div>
