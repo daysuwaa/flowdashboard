@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from '../components/Cards'
-import QuickTransfer from './QuickTransfer'
+// import QuickTransfer from './QuickTransfer'
 import MiddleCharts from '../components/Charts/MiddleChart'
 
 const page = () => {
@@ -8,7 +8,7 @@ const page = () => {
     <div className=''>
       <Card/>
       <MiddleCharts/>
-      <QuickTransfer/>
+      {/* <QuickTransfer/> */}
 
     </div>
   )
