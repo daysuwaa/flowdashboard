@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
-import ActuveTabs from "./ActiveTabs";
+import React, { useState, Suspense } from "react";
+import ActiveTabs from "./ActiveTabs";
 import EditProfile from "./profile/EditProfile";
 import Preferences from "./Preferences";
 import Security from "./Security";
 
 const tabs = [
   { label: "Edit profile", value: "profile" },
-  { label: "Preferences ", value: "preferences" },
+  { label: "Preferences", value: "preferences" },
   { label: "Security", value: "security" },
 ];
 
@@ -18,19 +18,21 @@ const Page = () => {
   const renderTabContent = () => {
     switch (activeTab) {
       case "profile":
-        return <EditProfile/>;
+        return <EditProfile />;
       case "preferences":
-        return <Preferences/>
+        return <Preferences />;
       case "security":
-        return <Security/>
+        return <Security />;
       default:
         return null;
     }
   };
 
   return (
-    <div className="bg-white  rounded-lg  p-6">
-      <ActuveTabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
+    <div className="bg-white rounded-lg p-6">
+      <Suspense fallback={<div>Loading tabs...</div>}>
+        <ActiveTabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
+      </Suspense>
       <div>{renderTabContent()}</div>
     </div>
   );

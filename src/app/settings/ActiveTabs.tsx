@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 
 type Tab = {
   label: string;
@@ -14,8 +15,17 @@ type ActiveTabsProps = {
 };
 
 const ActiveTabs: React.FC<ActiveTabsProps> = ({ tabs, activeTab, setActiveTab }) => {
+  const searchParams = useSearchParams();
+  const tabFromQuery = searchParams.get("tab");
+
+  useEffect(() => {
+    if (tabFromQuery && ["profile", "security", "preferences"].includes(tabFromQuery)) {
+      setActiveTab(tabFromQuery);
+    }
+  }, [tabFromQuery, setActiveTab]);
+
   return (
-    <div className="flex border-b  border-gray-200 mb-6">
+    <div className="flex border-b border-gray-200 mb-6">
       {tabs.map((tab) => (
         <button
           key={tab.value}

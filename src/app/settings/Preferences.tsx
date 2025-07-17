@@ -9,15 +9,15 @@ const Preferences = () => {
   const isDarkMode = theme === "dark";
   
   return (
-    <div className="p-6 max-w-2xl mx-auto ">
+    <div className="lg:p-6 max-w-2xl mx-auto ">
       <h1 className="text-2xl font-bold mb-6 text-gray-800">
         Preferences
       </h1>
       
-      <div className="bg-white  rounded-lg  p-6">
+      <div className="bg-white  rounded-lg  lg:p-6">
         <div className="space-y-4">
           {/* Theme Section */}
-          <div className="flex items-center justify-between">
+          <div className="lg:flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="p-2 rounded-lg bg-gray-100 dark:bg-gray-100">
                 {isDarkMode ? (

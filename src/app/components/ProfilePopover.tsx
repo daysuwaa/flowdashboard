@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import Popover from '@mui/material/Popover';
-import { User, Settings, LogOut, Bell } from 'lucide-react';
+import { User, Settings, LogOut, Bell, Lock } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import Image from "next/image";
 import UserProfile from "../assets/UserIcon.png";
@@ -35,12 +35,17 @@ const ProfilePopover: React.FC<ProfilePopoverProps> = ({ isOpen, onClose, anchor
     {
       icon: <Settings className="w-4 h-4" />,
       label: 'Settings',
-      action: () => handleMenuItemClick('/settings')
+      action: () => handleMenuItemClick('/settings?tab=profile')
     },
     {
       icon: <Bell className="w-4 h-4" />,
       label: 'Preferences',
-      action: () => handleMenuItemClick('/settings')
+      action: () => handleMenuItemClick('/settings?tab=preferences')
+    },
+    {
+      icon: <Lock className="w-4 h-4" />,
+      label: 'Security',
+      action: () => handleMenuItemClick('/settings?tab=security')
     },
   ];
 

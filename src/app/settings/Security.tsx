@@ -44,9 +44,9 @@ const Security = () => {
 
 
   return (
-    <div className="mx-6 mt-4 grid grid-cols-3 items-center">
-      <div className="col-span-2">
-      <form onSubmit={handleSubmit} className=" mx-auto p-8">
+    <div className="lg:mx-6 mt-4 grid lg:grid-cols-3 items-center">
+      <div className="lg:col-span-2">
+      <form onSubmit={handleSubmit} className=" mx-auto lg:p-8">
         <h1 className="text-2xl font-bold mb-6 text-gray-800">Security Settings</h1>
         <p className="mb-6">Change your account password</p>
         <InputField
@@ -70,7 +70,7 @@ const Security = () => {
           value={confirmPassword}
           onChange={setConfirmPassword}
         />
-          <div className="w-full flex justify-end">
+          <div className="w-full  flex justify-end">
           <Button
             type="submit"
             variant="contained"
@@ -93,7 +93,7 @@ const Security = () => {
 
       </form>
       </div>
-      <div className="bg-[#b0b7ff5f] p-6 rounded-xl">
+      <div className="bg-[#b0b7ff5f] mt-9 lg:mt-0 p-6 rounded-xl">
         <h1 className="text-xl font-medium mb-3">Rules for password</h1>
         <p>To create a new password, you would have to meet all the requirements</p>
         <ol className="my-3.5">
