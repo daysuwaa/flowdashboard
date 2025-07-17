@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import UserProfile from "../../assets/EditProfile.png";
 import toast from "react-hot-toast";
 import Button from '@mui/material/Button';
@@ -62,14 +62,39 @@ const handleSubmit = async () => {
     console.error(error);
   }
 };
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+const [preview, setPreview] = useState(UserProfile.src);
+
+  const handleImageClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setPreview(imageUrl);
+    }
+  };
+
   return (
     <div className="mx-6 mt-4 lg:flex ">
       <div className="lg:mr-16 flex justify-center mx-auto">
-        <Image
-          src={UserProfile}
-          alt="editprofile"
-          className="w-[90px] h-[90px] rounded-full lg:h-[71px]"
-        />
+       <input
+        type="file"
+        accept=".png, .jpeg, .jpg"
+        className="hidden"
+        ref={fileInputRef}
+        onChange={handleFileChange}
+      />
+      <Image
+        src={preview}
+        alt="edit profile"
+        width={90}
+        height={90}
+        onClick={handleImageClick}
+        className="rounded-full cursor-pointer object-cover w-[100px] h-[80px]"
+      />
       </div>
 
       
