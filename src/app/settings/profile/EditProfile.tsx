@@ -93,7 +93,7 @@ const [preview, setPreview] = useState(UserProfile.src);
         width={90}
         height={90}
         onClick={handleImageClick}
-        className="rounded-full cursor-pointer object-cover w-[100px] h-[80px]"
+        className="rounded-full cursor-pointer object-cover  h-[86px] "
       />
       </div>
 
