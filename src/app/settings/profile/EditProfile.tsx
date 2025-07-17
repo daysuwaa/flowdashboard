@@ -161,7 +161,11 @@ const handleSubmit = async () => {
 
                 padding:{
                   xs:'10px 50px'
-                }
+                },
+                '&:hover': {
+                backgroundColor: '#464646', 
+                color: '#fff', 
+    },
               
               }}
               type="submit"
