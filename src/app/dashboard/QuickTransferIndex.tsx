@@ -1,6 +1,6 @@
 import React from 'react'
-import Images_titles from './Personnels'
-import BalancePage from '../Balance/Balance'
+import Images_titles from './QuickTransfer/Personnels'
+import BalancePage from './Balance/Balance'
 
 const Qt = () => {
   return (

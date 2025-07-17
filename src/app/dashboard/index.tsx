@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from '../components/Cards'
-import QuickTransfer from './QuickTransfer/index'
+import QuickTransfer from './QuickTransferIndex'
 import MiddleCharts from '../components/Charts/MiddleChart'
 
 const page = () => {
