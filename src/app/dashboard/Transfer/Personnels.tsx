@@ -27,7 +27,7 @@ const ImagesTitlesComponent = ({ imagesrc, name, occupation, fontWeight }: Props
   )
 }
 
-const Images_titles = () => {
+const Personnels = () => {
   const scrollRef = useRef<HTMLDivElement>(null)
 
   const scrollRight = () => {
@@ -91,4 +91,4 @@ const Images_titles = () => {
   )
 }
 
-export default Images_titles
+export default Personnels

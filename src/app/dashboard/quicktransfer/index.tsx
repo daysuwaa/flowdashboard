@@ -1,5 +1,5 @@
 import React from 'react'
-import Images_titles from './Personnels'
+import Images_titles from '../Transfer/Personnels'
 import BalancePage from '../Balance/Balance'
 
 const index = () => {

@@ -1,16 +1,16 @@
 import React from 'react'
-import Images_titles from './Transfer/Personnels'
-import BalancePage from './Balance/Balance'
+import Personnels from './Personnels'
+import BalancePage from '../Balance/Balance'
 
-const Qt = () => {
+const index = () => {
   return (
     <div className='mt-6'>
     <div className="grid xl:grid-cols-3 gap-10 h-full">
-  <Images_titles />
+  <Personnels />
   <BalancePage />
 </div>
     </div>
   )
 }
 
-export default Qt
+export default index
