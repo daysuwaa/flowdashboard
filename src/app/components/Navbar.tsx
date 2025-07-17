@@ -1,7 +1,7 @@
 "use client";
 
 import { Search } from "lucide-react";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import SettingsIcon from "../assets/Settings__Nav.png";
 import NotificationsIcon from "../assets/Notification.png";
 import Profile from "../assets/UserIcon.png";
@@ -9,11 +9,14 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import NotificationModal from "./NotificationModal";
 import { useRouter } from "next/navigation";
+import ProfilePopover from "./ProfilePopover";
 
 const Navbar = () => {
   const pathname = usePathname();
   const [showNotifications, setShowNotifications] = useState(false);
-  const route = useRouter()
+  const [showProfilePopover, setShowProfilePopover] = useState(false);
+  const profileButtonRef = useRef<HTMLImageElement>(null);
+  const route = useRouter();
 
   const routeToTitleMap: { [key: string]: string } = {
     "/": "Overview",
@@ -29,10 +32,18 @@ const Navbar = () => {
 
   const pageTitle = routeToTitleMap[pathname] || "Dashboard";
 
+  const handleProfileClick = () => {
+    setShowProfilePopover(true);
+  };
+
+  const handleCloseProfilePopover = () => {
+    setShowProfilePopover(false);
+  };
+
   return (
     <>
       <div className="hidden lg:flex justify-between items-center bg-white px-6 py-3">
-        <h1 className="lg:text-[28px] font-semibold text-center text-[#343C6A] ">
+        <h1 className="lg:text-[28px] font-semibold text-center text-[#343C6A]">
           {pageTitle}
         </h1>
         <div className="flex items-center">
@@ -45,22 +56,23 @@ const Navbar = () => {
             />
           </div>
           <Image
-           onClick={()=> route.push ('/settings')}
+            onClick={() => route.push('/settings')}
             src={SettingsIcon}
             alt="settings_icon"
-            className="bg-gray-200 p-2  cursor-pointer rounded-full w-10 h-10 mr-5"
+            className="bg-gray-200 p-2 cursor-pointer rounded-full w-10 h-10 mr-5 hover:bg-gray-300 transition-colors"
           />
           <Image
             onClick={() => setShowNotifications(true)}
             src={NotificationsIcon}
             alt="notifications_icon"
-            className="bg-gray-200 p-2 rounded-full w-10 h-10 mr-5 cursor-pointer"
+            className="bg-gray-200 p-2 rounded-full w-10 h-10 mr-5 cursor-pointer hover:bg-gray-300 transition-colors"
           />
           <Image
-          
+            ref={profileButtonRef}
+            onClick={handleProfileClick}
             src={Profile}
             alt="profile"
-            className="rounded-full w-[60px] h-[60px] mr-5 "
+            className="rounded-full w-[60px] h-[60px] mr-5 cursor-pointer hover:ring-2 hover:ring-blue-300 transition-all"
           />
         </div>
       </div>
@@ -69,6 +81,13 @@ const Navbar = () => {
       <NotificationModal
         isOpen={showNotifications}
         onClose={() => setShowNotifications(false)}
+      />
+      
+      {/* Profile Popover */}
+      <ProfilePopover 
+        isOpen={showProfilePopover}
+        onClose={handleCloseProfilePopover}
+        anchorEl={profileButtonRef.current}
       />
     </>
   );

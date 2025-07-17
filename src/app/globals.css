@@ -3,7 +3,10 @@
 body{
   color: #343C6A;
 }
-
+ol, ul {
+  list-style: none;
+  padding-left: 0;
+}
 /* Hide scrollbar for Webkit */
 /* ::-webkit-scrollbar {
   display: none;

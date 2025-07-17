@@ -15,7 +15,7 @@ type ActiveTabsProps = {
 
 const ActiveTabs: React.FC<ActiveTabsProps> = ({ tabs, activeTab, setActiveTab }) => {
   return (
-    <div className="flex border-b border-gray-200 mb-6">
+    <div className="flex border-b  border-gray-200 mb-6">
       {tabs.map((tab) => (
         <button
           key={tab.value}

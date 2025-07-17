@@ -29,7 +29,7 @@ const Page = () => {
   };
 
   return (
-    <div className="bg-white rounded-lg  p-6">
+    <div className="bg-white  rounded-lg  p-6">
       <ActuveTabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
       <div>{renderTabContent()}</div>
     </div>

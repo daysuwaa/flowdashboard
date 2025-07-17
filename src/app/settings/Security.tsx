@@ -44,9 +44,11 @@ const Security = () => {
 
 
   return (
-    <div className="mx-6 mt-4 lg:fle">
-      <form onSubmit={handleSubmit} className="max-w-2xl mx-auto border rounded-lg border-gray-200 p-6 shadow-md">
-        <h1 className="text-xl text-[#343C6A] font-semibold mb-6">Change your Password</h1>
+    <div className="mx-6 mt-4 grid grid-cols-3 items-center">
+      <div className="col-span-2">
+      <form onSubmit={handleSubmit} className=" mx-auto p-8">
+        <h1 className="text-2xl font-bold mb-6 text-gray-800">Security Settings</h1>
+        <p className="mb-6">Change your account password</p>
         <InputField
           type="password"
           placeholder="********"
@@ -88,7 +90,18 @@ const Security = () => {
             )}
           </Button>
         </div>
+
       </form>
+      </div>
+      <div className="bg-[#b0b7ff5f] p-6 rounded-xl">
+        <h1 className="text-xl font-medium mb-3">Rules for password</h1>
+        <p>To create a new password, you would have to meet all the requirements</p>
+        <ol className="my-3.5">
+          <li className="mb-2">- Lorem ipsum dolor.</li>
+          <li className="mb-2">- Ratione perferendis rerum eius colpa eligendi.</li>
+          <li className="mb-2">- Eius colpa eligendi.</li>
+        </ol>
+      </div>
     </div>
   );
 };
