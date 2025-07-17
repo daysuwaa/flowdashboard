@@ -7,7 +7,6 @@ import {
   Cell,
   ResponsiveContainer,
   Tooltip,
-  Legend,
 } from 'recharts';
 
 const data = [
@@ -34,7 +33,7 @@ const ExpenseStatistics = () => {
             outerRadius={90}
             paddingAngle={4}
             dataKey="value"
-            label={({ name, percent }) => `${Math.round(percent * 100)}%`}
+            // label={({ name, percent }) => `${Math.round(percent * 100)}%`}
           >
             {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index]} stroke="#fff" strokeWidth={2} />
