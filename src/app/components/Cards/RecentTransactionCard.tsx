@@ -2,9 +2,9 @@
 import * as React from 'react';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import depositicon from "../../assets/deposit.png"
-import jemiwilson from "../../assets/jemiwilson.png"
-import paypal from "../../assets/PayPal Payment.png"
+import depositicon from "../../assets/deposit.svg"
+import jemiwilson from "../../assets/jemiwilson.svg"
+import paypal from "../../assets/PayPal.svg"
 import Image, { StaticImageData } from 'next/image';
 
 
@@ -25,15 +25,15 @@ const RecentTransactionCardComponent = ({iconbg, images, heading, dummydates,amo
       <div className="flex items-center lg:gap-4">
         <Image src={images} alt="icon" className={`${iconbg} w-10 h-10 rounded-full p-2`} />
         <div>
-          <p className="text-sm text-[#232323] font-light">{heading}</p>
-          <p className="text-xs text-gray-500">{dummydates}</p>
+          <p className="text-sm text-[#232323] font-normal">{heading}</p>
+          <p className="text-xs text-gray-500 font-normal">{dummydates}</p>
         </div>
       </div>
       <Typography
         sx={{
           color: amountColor,
           fontSize: 14,
-          fontWeight: 400,
+          fontWeight: 500,
         }}
       >
         {amounts}
@@ -56,8 +56,8 @@ const RecentTransactionCard =() =>{
         dummydates='28th January 2021' 
         images={depositicon} 
         heading='Deposit from my Card' 
-        amountColor='red' 
-        amounts='$ -850'
+        amountColor='#FF4B4A' 
+        amounts='-$850'
         />
         <RecentTransactionCardComponent 
         iconbg='bg-indigo-100' 
@@ -65,7 +65,7 @@ const RecentTransactionCard =() =>{
         images={paypal} 
         heading='Deposit from my Paypal' 
         amountColor='#41D4A8' 
-        amounts='$ +2,500'
+        amounts='+$2,500'
         />
         <RecentTransactionCardComponent 
         iconbg='bg-teal-100' 
@@ -73,7 +73,7 @@ const RecentTransactionCard =() =>{
         images={jemiwilson} 
         heading='Jemi Wilson' 
         amountColor='#41D4A8' 
-        amounts='$ +5,400'
+        amounts='+$5,400'
         />
         </div>
         </div>

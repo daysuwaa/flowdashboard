@@ -3,9 +3,9 @@ import React, { useRef } from 'react'
 import Image, { StaticImageData } from 'next/image'
 import { ChevronRight } from 'lucide-react'
 
-import person1 from "../../assets/person1.png"
-import person2 from "../../assets/person2.png"
-import person3 from "../../assets/person3.png"
+import person1 from "../../assets/person1.svg"
+import person2 from "../../assets/person2.svg"
+import person3 from "../../assets/person3.svg"
 import person4 from "../../assets/person4.png"
 import WriteAmountInput from './WriteAmountInput';
 import Headings from '../Headings';

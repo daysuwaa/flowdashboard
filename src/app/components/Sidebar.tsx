@@ -3,17 +3,19 @@
 import Image from "next/image";
 import React, { useState, useRef } from "react";
 import logo from "../assets/logo.svg";
-import DashboardIcon from "../assets/dashboard.png";
+import DashboardIcon from "../assets/dashboardblack.svg";
+import DashboardIconGray from "../assets/dashboardgray.svg";
 import InvestmentIcon from "../assets/Investment.png";
 import LoanIcon from "../assets/loan.png";
 import PriviledgeIcon from "../assets/priviledge.png";
 import ServicesIcon from "../assets/services.png";
-import SettingIcon from "../assets/Settings.png";
+import SettingIcon from "../assets/settingsblack.svg";
+import SettingIconGray from "../assets/settingsgray.svg";
 import AccountsIcon from "../assets/Account.png";
 import CreditCardIcon from "../assets/Credit Card Design.png";
 import TransferIcon from "../assets/Transfer.png";
 import { Search } from "lucide-react";
-import Profile from "../assets/UserIcon.png";
+import Profile from "../assets/UserProfile.svg";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
@@ -45,20 +47,56 @@ const Sidebar = () => {
   };
 
   const pageTitle = routeToTitleMap[pathname] || "Dashboard";
-
-  const sidebarLinks = [
-     { label: "Dashboard", href: "/", icon: DashboardIcon },
-    { label: "Transactions", href: "/not-found", icon: TransferIcon },
-    { label: "Accounts", href: "/accounts", icon: AccountsIcon },
-    { label: "Investment", href: "/investment", icon: InvestmentIcon },
-    { label: "CreditCards", href: "/credit-cards", icon: CreditCardIcon },
-    { label: "Loans", href: "/loans", icon: LoanIcon },
-    { label: "Services", href: "/services", icon: ServicesIcon },
-    { label: "My Priviledge", href: "/privilege", icon: PriviledgeIcon },
-    { label: "Settings", href: "/settings", icon: SettingIcon },
-  ];
-
   const isActive = (href: string) => pathname === href;
+
+ const sidebarLinks = [
+  {
+    label: "Dashboard",
+    href: "/",
+    icon: isActive("/") ? DashboardIcon : DashboardIconGray,
+  },
+  {
+    label: "Transactions",
+    href: "/not-found",
+    icon: TransferIcon,
+  },
+  {
+    label: "Accounts",
+    href: "/accounts",
+    icon: AccountsIcon,
+  },
+  {
+    label: "Investment",
+    href: "/investment",
+    icon: InvestmentIcon,
+  },
+  {
+    label: "CreditCards",
+    href: "/credit-cards",
+    icon: CreditCardIcon,
+  },
+  {
+    label: "Loans",
+    href: "/loans",
+    icon: LoanIcon,
+  },
+  {
+    label: "Services",
+    href: "/services",
+    icon: ServicesIcon,
+  },
+  {
+    label: "My Priviledge",
+    href: "/privilege",
+    icon: PriviledgeIcon,
+  },
+  {
+    label: "Settings",
+    href: "/settings",
+    icon: isActive("/settings") ? SettingIcon : SettingIconGray,
+  },
+];
+
 
   const SidebarContent = () => (
     <nav className="space-y-2  mt-10 ">
@@ -122,10 +160,9 @@ const Sidebar = () => {
 
       {/* Slide-in Mobile Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full w-[55%] mx-auto justfify-center  bg-white z-40 transform transition-transform duration-300 shadow-md lg:hidden ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
-      >
+         className={`fixed top-0 left-0 h-full w-[75%] bg-white z-40 transform transition-all duration-300 ease-in-out shadow-lg lg:hidden ${
+         isOpen ? "translate-x-0" : "-translate-x-full"
+         }`}>
         <div className="p-4 flex justify-between items-center border-b">
           <div className="flex items-center gap-2">
             <Image src={logo} alt="flow-logo" width={30} height={30} />

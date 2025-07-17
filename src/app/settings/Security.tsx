@@ -122,7 +122,7 @@ const Security = () => {
                   color: '#fff',
                 },
                 padding: { xs: "8px 40px" },
-                "&:disabled": { backgroundColor: "#999" },
+                "&:disabled": { backgroundColor: "#999",  cursor: 'not-allowed' },
               }}
             >
               {loading ? (

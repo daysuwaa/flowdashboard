@@ -4,7 +4,7 @@ import Popover from '@mui/material/Popover';
 import { User, Settings, LogOut, Bell, Lock } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import Image from "next/image";
-import UserProfile from "../assets/UserIcon.png";
+import UserProfile from "../assets/UserProfile.svg";
 
 interface ProfilePopoverProps {
   isOpen: boolean;

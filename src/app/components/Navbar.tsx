@@ -4,7 +4,7 @@ import { Search } from "lucide-react";
 import React, { useState, useRef } from "react";
 import SettingsIcon from "../assets/Settings__Nav.png";
 import NotificationsIcon from "../assets/Notification.png";
-import Profile from "../assets/UserIcon.png";
+import Profile from "../assets/UserProfile.svg";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import NotificationModal from "./NotificationModal";

@@ -1,8 +1,8 @@
 "use client"
 import React from 'react';
-import ChipCardsB from "../../assets/ChipCardBlack.png";
-import ChipCardsW from "../../assets/ChipCardWhite.png";
-import mastercard from "../../assets/mastercard.png";
+import ChipCardsB from "../../assets/ChipCardB.svg";
+import ChipCardsW from "../../assets/ChipCardW.svg";
+import mastercard from "../../assets/mastercard.svg";
 import CreditCardComponent from './CardItem';
 import RecentTransactionCard from './RecentTransactionCard';
 
